@@ -1,0 +1,17 @@
+// Dot Files
+filename
+B.dot
+dinetwork {
+C -> D [label="b"];
+D -> C [label="b"];
+C -> C [label="a"];
+D -> D [label="a"];
+C[ color=cyan, shape=circle]
+D[ color=lime, shape=triangle]
+}
+// Text Box
+textarea.start
+FA B = new("B.dot");
+FA C =  rev(B);
+C.dump("dot");
+textarea.stop

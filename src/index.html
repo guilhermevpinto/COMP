@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Project of Compilers Course Unit">
+    <meta name="author" content="COMP 15/16 - T05G02">
+    <title>FEUP/EIC0028 Compilers  2015/2016 - FAOPS - T05G02</title>
+    <link rel="icon" href="https://paginas.fe.up.pt/demetwww/images/u_feup.png">
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/sweetalert.css">
+    <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body>
+
+  <!-- Modal -->
+  <div class="modal fade" id="modal" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-lg">
+          <div class="modal-content">
+          </div>
+          <!-- /.modal-content -->
+      </div>
+      <!-- /.modal-dialog -->
+  </div>
+  <!-- /.modal -->
+<!-- Begin page content -->
+<div class="container">
+  <div class="page-header col-md-12">
+    <div class="col-md-8">
+      <h1>FEUP/EIC0028 Compilers - FAOPS</h1>
+    </div>
+    <div class="col-md-2" style="text-align:right;" >
+        <h1><a class="btn btn-info" data-toggle="modal" data-target="#aboutUsModal">About Us <i
+                class="glyphicon glyphicon-question-sign"></i></a></h1>
+    </div>
+      <div class="modal fade" id="aboutUsModal" role="dialog" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+
+          <!-- Modal content-->
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+              <h4 class="modal-title">About us</h4>
+            </div>
+            <div class="modal-body">
+              <h3>Faculdade de Engenharia da Universidade do Porto</h3>
+              <h4>EIC0028 Compilers - Third Year, Second Semester</h4>
+              <ul class="list-group">
+                  <li class="list-group-item"><a href="https://pt.linkedin.com/in/antónio-ramadas-633039a9">António Ramadas</a></li>
+                  <li class="list-group-item"><a href="https://pt.linkedin.com/in/guilherme-pinto-9bb671110">Guilherme Pinto</a></li>
+                  <li class="list-group-item"><a href="https://pt.linkedin.com/in/josé-pedro-teles-62365694">José Pedro Teles</a></li>
+                  <li class="list-group-item"><a href="https://pt.linkedin.com/in/rui-vilares-4592b16a">Rui Vilares</a></li>
+                  <li class="list-group-item"><b>Group T05G02</b></li>
+              </ul>
+              <a href="https://github.com/RuiVilares/COMP-FAOPS">Visit our gitHub</a>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md 2" >
+          <h1><a class="btn btn-info " data-toggle="modal" data-target="#operations">Operations <i
+                  class="glyphicon glyphicon-question-sign"></i></a></h1>
+      </div>
+      <div class="modal fade" id="operations" role="dialog" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+
+          <!-- Modal content-->
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+              <h4 class="modal-title">Operations</h4>
+            </div>
+            <div class="modal-body">
+              <h2>How we implement the operations</h2>
+              <ul class="list-group">
+                  <li class="list-group-item"><h4>Multiply</h4>
+                    <p>We can run two DFAs in parallel on the same input via the
+product construction, as long as they share the same alphabet. Q1x2 = Q1 x Q2.  </p></li>
+                  <li class="list-group-item"><h4>Concatenate</h4>
+                    <p>The set of states of the concatenated NFA is just the (disjoint) union of the states of the two automata.
+The initial state of the new NFA is the initial state of the first NFA.
+The accepting states of the new NFA are the accepting states of the second NFA.
+Every transition from either original NFA is a transition in the new NFA.
+The only new transitions are εε-moves from each accepting state of the first NFA to the initial state of the second NFA.    </p></li>
+                  <li class="list-group-item"><h4>Complement</h4>
+                    <p>If DFA accepts language L, then <span class="uperline">L</span> is accepted by DFA,
+a version of complement <span class="uperline">DFA</span> in which the accepting and
+non-accepting states have been swapped. </p></li>
+                  <li class="list-group-item"><h4>Reverse</h4>
+                    <p>Assigns to each pair of strings (x;y) what T assigns to its mirror images (<span class="uperline">x</span>;<span class="uperline">y</span>) </p></li>
+                  <li class="list-group-item"><h4>Intersection </h4>
+                    <p>We can intersect DFA1 and DFA2 (written DFA1 &#8745  DFA2) by
+defining the accepting states of DFA1 x DFA2 as those state
+pairs in which both states are final states of their DFAs.</p> </li>
+                  <li class="list-group-item"><h4>Union</h4>
+                    <p>We can union DFA1 and DFA2 (written DFA1 &#8746 DFA2) by
+  defining the accepting states of DFA1 x DFA2 as those state
+  pairs in which either state is a final state of its DFA. </p></li>
+                </ul>
+                <ul class="list-group"> <h3>Theoretical support </h3>
+                    <li class="list-group-item"><a href="http://cs.wellesley.edu/~cs235/fall09/lectures/14_DFA_operations/14_DFA_operations_revised.pdf">Link1 </a></li>
+                    <li class="list-group-item"><a href="http://math.stackexchange.com/questions/205924/existence-of-nfa-of-a-reverse-of-a-language">Link2</a></li>
+                    <li class="list-group-item"><a href="http://www.tutorialspoint.com/automata_theory/dfa_complement.htm"s>Link3</a></li>
+                </ul>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+  </div>
+  <div class="col-md-12">
+    <div class="col-md-6">
+      <a id="writeDotButton" class="btn btn-info btn-file btn-space col-md-3">Write DOT file</a>
+      <span class="btn btn-info btn-file col-md-3">
+        Upload DOT file<input type="file" id="input">
+      </span>
+      <!-- Modal -->
+      <a data-toggle="modal" class ="btn-circle" data-target="#uploadModal">
+        <i class="glyphicon glyphicon-question-sign"></i>
+      </a>
+    <div class="modal fade" id="uploadModal" role="dialog" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h4 class="modal-title">Upload dot file instructions</h4>
+          </div>
+          <div class="modal-body">
+            <p>You need to submit a dot file with the follow structure:</p>
+<pre>
+dinetwork {
+  A[ color=cyab, shape=triangle]
+  B[ color=lime, shape=circle]
+  C[ color=lime, shape=circle]
+  A -> B [label="a"];
+  A -> C [label="b"];
+  B -> B [label="a"];
+  B -> B [label="b"];
+  C -> C [label="a"];
+  C -> C [label="b"];
+}</pre>
+              <footer>According to <a href="http://visjs.org/docs/network/#importDot">vis library</a></footer>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-6">
+      <h3>Predefined examples<a data-toggle="modal" class ="btn-circle" data-target="#examplesModal">
+         <i class="glyphicon glyphicon-question-sign"></i>
+      </a></h3>
+      <div class="modal fade" id="examplesModal" role="dialog" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <!-- Modal content-->
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+              <h4 class="modal-title">Exemples instructions</h4>
+            </div>
+            <div class="modal-body">
+              <div class="te">
+                  <p>Press to see some operations examples</p>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="btn-group">
+        <button type="button" class="btn btn-default" onclick="loadExample(1)">Simple</button>
+        <button type="button" class="btn btn-default" onclick="loadExample(2)">2 Operations</button>
+        <button type="button" class="btn btn-default" onclick="loadExample(3)">2 Dumps</button>
+        <button type="button" class="btn btn-default" onclick="loadExample(4)">Precedence</button>
+        <button type="button" class="btn btn-default" onclick="loadExample(5)">1 FA</button>
+      </div>
+      <!-- Modal -->
+      <div class="modal fade" id="editDot" role="dialog" role="dialog" aria-labelledby="editDot" aria-hidden="true" tabindex="-1">
+        <div class="modal-dialog">
+          <!-- Modal content-->
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+              <h4 class="modal-title">Dot file</h4>
+            </div>
+            <div class="modal-body">
+              <input type="text" placeholder="Dot name" id="editorDotName">
+              <br><br>
+              <textarea class="bs-example textBox" placeholder="Dot structure" id="editorDotText"></textarea>
+            </div>
+            <div class="modal-footer">
+              <div class="col-md-12">
+                <button class="btn btn-success btn-md col-md-4" onclick="submitButton()">Submit</button>
+                <button class="closeSubmit btn btn-danger btn-md col-md-4" data-dismiss="modal">Close</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-12">
+  <div class="col-md-6">
+    <h3>Code Editor
+    <!-- Modal -->
+    <a data-toggle="modal" class ="btn-circle" data-target="#editorModal">
+       <i class="glyphicon glyphicon-question-sign"></i>
+    </a></h3>
+    <div class="modal fade" id="editorModal" role="dialog" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h4 class="modal-title">Upload dot file instructions</h4>
+          </div>
+          <div class="modal-body">
+            <div class="te">
+                <p>Your code need to follow the following :</p>
+                <pre>
+ FA A = new("A.dot");
+ FA B = new("B.dot");
+ FA C = A int B;
+ FA D = rev(A);
+ FA E = A + B;
+ FA F= A . B;
+ FA G= A x B;
+ C.dump("dot");</pre>
+                <br>
+                <p>
+                The supported operations are <strong>x</strong> (multiply), <strong>.</strong> (concatenate), <strong>not</strong> (complement), <strong>rev</strong> (reverse), <strong>int</strong> (intersection), and <strong>+</strong> (union)
+                </p>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="openEditor" class="centered">
+      <button id="ch" type="button" class="btn btn-success col-md-12" onclick="openEditor()">Open</button>
+    </div>
+    <div id="editorW" class="editorBox">
+      <div class="col-md-12">
+		      <textarea class="bs-example textBox" id="editor"></textarea>
+          <button class="btn btn-success btn-md col-md-4" onclick="loadEditor()">Submit Code</button>
+          <button class="closeSubmit btn btn-danger btn-md col-md-4" onclick="openEditor()">Close editor</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-6">
+    <h3>Dot files
+        <!-- Modal -->
+      <a data-toggle="modal" class ="btn-circle" data-target="#dotFilesModal">
+         <i class="glyphicon glyphicon-question-sign"></i>
+      </a></h3>
+      <div class="modal fade" id="dotFilesModal" role="dialog" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+       <div class="modal-dialog">
+         <!-- Modal content-->
+         <div class="modal-content">
+           <div class="modal-header">
+             <button type="button" class="close" data-dismiss="modal">&times;</button>
+             <h4 class="modal-title">Uploaded files instructions</h4>
+           </div>
+           <div class="modal-body">
+             <div class="te">
+                 <p>A list of your uploaded files</p>
+                     <ul class="list-group">
+                       <p class="list-group-item">Click on file name to see content </p>
+                       <p class="list-group-item">Click on x to delete file</p>
+                   </ul>
+             </div>
+           </div>
+           <div class="modal-footer">
+             <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+           </div>
+         </div>
+       </div>
+     </div>
+    <ul class="listFiles">
+    </ul>
+  </div>
+  </div>
+
+  <div class="col-md-12 dynamicTabs">
+    <h3>Graph display
+      <!-- Modal -->
+      <a data-toggle="modal" class ="btn-circle" data-target="#graphModal">
+       <i class="glyphicon glyphicon-question-sign"></i>
+      </a>
+     </h3>
+     <!-- Modal -->
+     <div class="modal fade" id="graphModal" role="dialog" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+       <div class="modal-dialog">
+       <!-- Modal content-->
+         <div class="modal-content">
+           <div class="modal-header">
+             <button type="button" class="close" data-dismiss="modal">&times;</button>
+               <h4 class="modal-title">Upload dot file instructions</h4>
+           </div>
+           <div class="modal-body">
+             <div class="te">
+               <p>Labels</p>
+                 <ul class="list-group">
+                  <p class="list-group-item">Final states are represented by the lime color <img src="/images/finalState.png" alt="cyan"> </p>
+                  <p class="list-group-item">Initial state is represented by a triangle shape <img src="/images/initialState.png" alt="triangle"> </p>
+                  <p class="list-group-item">Transitions are labelled according to dot file or operation result <img src="/images/transition.png" alt="arrow"> </p>
+                 </ul>
+                 <footer>According to our specification </footer>
+             </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          </div>
+       </div>
+     </div>
+   </div>
+    <ul id="navtabs" class="nav nav-tabs">
+    </ul>
+    <div id="contentTabs" class="tab-content">
+
+    </div>
+  </div>
+
+  <div class="col-md-12 result">
+    <h3>Graph result
+      <!-- Modal -->
+      <a data-toggle="modal" class ="btn-circle" data-target="#resultModal">
+        <i class="glyphicon glyphicon-question-sign"></i>
+      </a>
+    </h3>
+      <!-- Modal -->
+      <div class="modal fade" id="resultModal" role="dialog" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <!-- Modal content-->
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+              <h4 class="modal-title">Result of all operations</h4>
+            </div>
+            <div class="modal-body">
+                <div class="te">
+                  <p>Resultant DFA of all user operations </p>
+                  <p class="list-group-item">Final states are represented by the lime color <img src="/images/finalState.png" alt="cyan"> </p>
+                  <p class="list-group-item">Initial state is represented by a triangle shape <img src="/images/initialState.png" alt="triangle"> </p>
+                  <p class="list-group-item">Transitions are labelled according to dot file or operation result <img src="/images/transition.png" alt="arrow"> </p>
+                </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    <ul id="navtabsResult" class="nav nav-tabs">
+
+    </ul>
+
+    <div id="contentTabsResult" class="tab-content">
+
+    </div>
+  </div>
+</div>
+
+<script type="text/javascript">
+
+  var nfaDSGlobal = 0;
+  var normalStateColorGlobal = "cyan";
+  var finalStateColorGlobal = "lime";
+
+  var errorMsg = function(msg) {
+    swal("Error!", msg, "error");
+  };
+
+  var warningMsg = function(msg) {
+    swal("Warning!", msg, "warning");
+  };
+
+  var successMsg = function(msg) {
+    swal("Success!", msg, "success");
+  };
+
+  function openEditor() {
+    $('#editorW').slideToggle("fast");
+  }
+
+</script>
+
+<script src="js/jquery.js"></script>
+<script src="js/bootstrap.min.js"></script>
+
+<script src="js/loadFile.js"></script>
+<script src="js/loadEditor.js"></script>
+<script src="js/resultFiles.js"></script>
+<script src="js/loadExample.js"></script>
+
+<script src="js/downloadFile.js"></script>
+<script src="js/sweetalert.min.js"></script>
+
+<script src="js/vis/dist/vis.js"></script>
+
+<script src="js/compiler/Queue.js"></script>
+<script src="js/compiler/Tree.js"></script>
+<script src="js/compiler/Token.js"></script>
+<script src="js/compiler/Sequence.js"></script>
+<script src="js/compiler/Lexical.js"></script>
+<script src="js/compiler/Syntactic.js"></script>
+<script src="js/compiler/TreeProcess.js"></script>
+<script src="js/compiler/DFA.js"></script>
+
+
+<script src="js/operations/CrossProduct.js"></script>
+<script src="js/operations/Complement.js"></script>
+<script src="js/operations/Concatenation.js"></script>
+<script src="js/operations/Intersection.js"></script>
+<script src="js/operations/Multiplication.js"></script>
+<script src="js/operations/NFAtoDFA.js"></script>
+<script src="js/operations/Reverse.js"></script>
+<script src="js/operations/Union.js"></script>
+<script src="js/operations/Dump.js"></script>
+
+
+<script type="text/javascript">
+    function openEditor() {
+        $('#editorW').slideToggle("fast");
+    }
+</script>
+
+</body>
+</html>

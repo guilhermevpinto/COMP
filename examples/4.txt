@@ -1,0 +1,41 @@
+// Dot Files
+filename
+A.dot
+dinetwork {
+  A -> B [label="a"];
+  B -> A [label="a"];
+  A -> A [label="b"];
+  B -> B [label="b"];
+  A[ color=cyan, shape=triangle]
+  B[ color=lime, shape=circle]
+}
+filename
+B.dot
+dinetwork {
+C -> D [label="b"];
+D -> C [label="b"];
+C -> C [label="a"];
+D -> D [label="a"];
+C[ color=cyan, shape=circle]
+D[ color=lime, shape=triangle]
+}
+filename
+C.dot
+dinetwork {
+E -> F [label="a"];
+F -> E [label="b"];
+E -> E [label="b"];
+F -> F [label="a"];
+E[ color=cyan, shape=circle]
+F[ color=lime, shape=triangle]
+}
+// Text Box
+textarea.start
+FA A = new("A.dot");
+FA B = new("B.dot");
+FA C = new("C.dot");
+FA D = not(A) x B + C;
+FA E = not(A) x (B + C);
+D.dump("without_precedence");
+E.dump("with_precedence");
+textarea.stop

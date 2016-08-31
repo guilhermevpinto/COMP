@@ -1,0 +1,26 @@
+dinetwork{
+  "A, D, F"->"B, D, F"[label="a"];
+  "A, D, F"->"A, C, E"[label="b"];
+  "A, D, E"->"B, D, F"[label="a"];
+  "A, D, E"->"A, C, E"[label="b"];
+  "A, C, F"->"B, C, F"[label="a"];
+  "A, C, F"->"A, D, E"[label="b"];
+  "A, C, E"->"B, C, F"[label="a"];
+  "A, C, E"->"A, D, E"[label="b"];
+  "B, D, F"->"A, D, F"[label="a"];
+  "B, D, F"->"B, C, E"[label="b"];
+  "B, D, E"->"A, D, F"[label="a"];
+  "B, D, E"->"B, C, E"[label="b"];
+  "B, C, F"->"A, C, F"[label="a"];
+  "B, C, F"->"B, D, E"[label="b"];
+  "B, C, E"->"A, C, F"[label="a"];
+  "B, C, E"->"B, D, E"[label="b"];
+  "A, D, F"[color=cyan, shape=triangle]
+  "A, D, E"[color=cyan, shape=circle]
+  "A, C, F"[color=cyan, shape=circle]
+  "A, C, E"[color=cyan, shape=circle]
+  "B, D, F"[color=cyan, shape=circle]
+  "B, D, E"[color=cyan, shape=circle]
+  "B, C, F"[color=cyan, shape=circle]
+  "B, C, E"[color=cyan, shape=circle]
+}

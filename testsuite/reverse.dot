@@ -1,0 +1,11 @@
+dinetwork{
+  "B, Start"->"A"[label="a"];
+  "B, Start"->"B"[label="b"];
+  "A"->"B"[label="a"];
+  "A"->"A"[label="b"];
+  "B"->"A"[label="a"];
+  "B"->"B"[label="b"];
+  "B, Start"[color=cyan, shape=triangle]
+  "A"[color=lime, shape=circle]
+  "B"[color=cyan, shape=circle]
+}

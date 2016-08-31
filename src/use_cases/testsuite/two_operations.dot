@@ -1,0 +1,14 @@
+dinetwork{
+  "A, D"->"B, D"[label="a"];
+  "A, D"->"A, C"[label="b"];
+  "A, C"->"B, C"[label="a"];
+  "A, C"->"A, D"[label="b"];
+  "B, D"->"A, D"[label="a"];
+  "B, D"->"B, C"[label="b"];
+  "B, C"->"A, C"[label="a"];
+  "B, C"->"B, D"[label="b"];
+  "A, D"[color=lime, shape=triangle]
+  "A, C"[color=lime, shape=circle]
+  "B, D"[color=cyan, shape=circle]
+  "B, C"[color=lime, shape=circle]
+}

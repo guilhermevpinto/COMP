@@ -1,0 +1,1 @@
+This example performs a concatenation between two FAs and dumps the result to a file named "concatenation.dot".

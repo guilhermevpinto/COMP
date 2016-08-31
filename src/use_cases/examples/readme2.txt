@@ -1,0 +1,1 @@
+This example performs the negation of the intersection between two FAs and dumps the result to a file named "two_operations.txt".

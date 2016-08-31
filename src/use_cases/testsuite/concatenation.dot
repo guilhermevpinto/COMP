@@ -1,0 +1,20 @@
+dinetwork{
+  "A"->"B, D"[label="a"];
+  "A"->"A"[label="b"];
+  "B, D"->"A, D"[label="a"];
+  "B, D"->"B, C, D"[label="b"];
+  "A, D"->"B, D"[label="a"];
+  "A, D"->"A, C"[label="b"];
+  "B, C, D"->"A, C, D"[label="a"];
+  "B, C, D"->"B, C, D"[label="b"];
+  "A, C"->"B, C, D"[label="a"];
+  "A, C"->"A, D"[label="b"];
+  "A, C, D"->"B, C, D"[label="a"];
+  "A, C, D"->"A, C, D"[label="b"];
+  "A"[color=cyan, shape=triangle]
+  "B, D"[color=lime, shape=circle]
+  "A, D"[color=lime, shape=circle]
+  "B, C, D"[color=lime, shape=circle]
+  "A, C"[color=blue, shape=circle]
+  "A, C, D"[color=lime, shape=circle]
+}
